@@ -1,0 +1,17 @@
+.createNote{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.note{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px;
+    background-color: #ffffff;
+    box-shadow: -5px 6px 15px -1px rgba(0,0,0,0.31);
+}
+.button{
+    margin: 5px auto;
+    background-image: linear-gradient(#6fdf67, #47b848);
+}

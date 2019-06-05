@@ -9,8 +9,8 @@ let mapStateToProps = (state) => {
 };
 let mapDispatchToProps = (dispatch) => {
     return {
-        setNotes: () => {
-            dispatch(setNotesAC());
+        setNotes: (notes) => {
+            dispatch(setNotesAC(notes));
         }
     }
 };

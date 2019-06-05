@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  position: relative;
 }
 
 .App-logo {
@@ -33,4 +34,17 @@
 }
 .App{
   display: flex;
+}
+button{
+  border: none;
+  outline: none;
+  width: 150px;
+  padding: 5px;
+  color: white;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.button{
+
 }
