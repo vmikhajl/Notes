@@ -17,6 +17,9 @@ const notesReducer = (state = initialState , action) => {
             };
         }
         case CREATE_NOTE:{
+            if (action.note.title === '') {
+                action.note.title = 'Untitled';
+            }
             return {
                 ...state,
                 id: state.id + 1,

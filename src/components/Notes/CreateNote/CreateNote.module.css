@@ -1,7 +1,21 @@
 .createNote{
-    position: absolute;
+    position: fixed;
     right: 10px;
-    top: 10px;
+    bottom: 10px;
+    transition: all .5s;
+}
+.createNoteHidden{
+    position: fixed;
+    right: -80px;
+    bottom: -320px;
+    transition: all .5s;
+
+}
+.createNoteHidden .note, .createNoteHidden .note input, .createNoteHidden .note textarea{
+    background-color: rgba(0,0,0,0);
+    box-shadow: none;
+    transition: .5s;
+    color: #59aa59;
 }
 .note{
     display: flex;
@@ -10,8 +24,24 @@
     padding: 12px;
     background-color: #ffffff;
     box-shadow: -5px 6px 15px -1px rgba(0,0,0,0.31);
+
+}
+.note textarea{
+    max-width: 250px;
+    min-width: 250px;
+    min-height: 200px;
+    max-height: 200px;
 }
 .button{
     margin: 5px auto;
     background-image: linear-gradient(#6fdf67, #47b848);
+}
+.displayButton{
+    width: 100px;
+    margin: 0 auto;
+    height: 25px;
+    font-size: 15px;
+    background-color: #494949;
+    color: #ffffff;
+    padding: 2px;
 }

@@ -2,12 +2,32 @@
     display: inline-block;
     padding: 5px;
     margin: 5px;
-    width: 250px;
+    width: 290px;
     height: 250px;
     background-image: linear-gradient(#ead07e, #ffea6f);
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.31);
+    box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.31);
     font-family: 'Indie Flower', cursive;
+    overflow:hidden;
+    cursor: pointer;
+}
+.note p, .note h3{
+    overflow:hidden
+}
+.note h3{
+    margin: 10px auto 5px;
+    width: 85%;
+    border-bottom: 2px #002366 solid;
+    color: #002366;
+}
+.note p{
+    margin: 5px 0 0;
+    text-align: left;
+    font-weight: bold;
+    color: #395ebc;
+    padding: 0 4px;
+    font-size: 13px;
 }
 .notes{
-    width: 620px;
+    width: 1240px;
+    margin: 0 auto;
 }

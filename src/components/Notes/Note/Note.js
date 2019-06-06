@@ -5,7 +5,7 @@ class Note extends React.Component{
     render(){
         return (
             <div className={style.note}>
-                <h2>{this.props.state.title}</h2>
+                <h3>{this.props.state.title}</h3>
                 <p>{this.props.state.content}</p>
             </div>
         )

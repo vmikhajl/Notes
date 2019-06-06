@@ -28,11 +28,13 @@ class Notes extends React.Component{
     }
     notes() {
         let length = this.props.notesData.notes.length;
-        return  length > 0 ? this.getNotes() : <div>empty</div>;
+        return  length > 0 ? this.getNotes() : <div><h1>Hello</h1></div>;
     }
     render(){
         return (
-            <div className={style.notes}>{this.notes()}</div>
+            <div className={style.notes}>
+                {this.notes()}
+            </div>
         )
     }
 }

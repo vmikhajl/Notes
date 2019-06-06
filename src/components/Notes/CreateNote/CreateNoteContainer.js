@@ -1,12 +1,18 @@
 import {connect} from "react-redux";
 import CreateNote from "./CreateNote";
-import {clearNewNoteAC, updateContentAC, updateTitleAC} from "../../../redux/reducer/noteCreateReducer";
+import {
+    clearNewNoteAC,
+    hideCreatorAC,
+    showCreatorAC,
+    updateContentAC,
+    updateTitleAC
+} from "../../../redux/reducer/noteCreateReducer";
 import {createNoteAC} from "../../../redux/reducer/NotesReducer";
 
 
 let mapStateToProps = (state) => {
-
     return {
+        display: state.newNote.display,
         newNote: state.newNote.newNote,
         notesData: state.notesData
     }
@@ -25,7 +31,13 @@ let mapDispatchToProps = (dispatch) => {
         },
         clearNote: () => {
             dispatch(clearNewNoteAC());
-        }
+        },
+        showCreator: () => {
+            dispatch(showCreatorAC());
+        },
+        hideCreator: () => {
+            dispatch(hideCreatorAC());
+        },
 
     }
 };
