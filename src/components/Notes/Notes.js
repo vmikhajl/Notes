@@ -2,7 +2,7 @@ import React from 'react'
 import * as axios from 'axios'
 import Note from "./Note/Note";
 import style from './Note/Note.module.css'
-import EditNote from "./EditNote/EditNote";
+import EditNoteContainer from "./EditNote/EditNoteContainer";
 
 class Notes extends React.Component{
     componentDidMount() {
@@ -40,11 +40,7 @@ class Notes extends React.Component{
         return (
             <div className={style.notes}>
                 {this.props.editNote.toggleNote
-                    ? <EditNote state={this.props.notesData}
-                                editNote={this.props.editNote.note}
-                                deleteNote={this.props.deleteNote}
-                                toggleNote={this.props.toggleNote}
-                    /> :this.notes()}
+                    ? <EditNoteContainer/> :this.notes()}
             </div>
         )
     }

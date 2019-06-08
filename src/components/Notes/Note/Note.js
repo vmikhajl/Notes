@@ -14,20 +14,20 @@ class Note extends React.Component{
             .catch((error) => {
                 console.log(error)
             });
-        console.log(this);
-
     };
     toggleNote = () => {
-        debugger;
         this.props.toggleNote(this.props.note);
     };
     render(){
         return (
             <div  className={style.note}>
-                <button className={style.deleteBtn} onClick={this.deleteNote}>delete</button>
-                <button className={style.deleteBtn} onClick={this.toggleNote}>edit</button>
                 <h3>{this.props.note.title}</h3>
                 <p>{this.props.note.content}</p>
+                <div className={style.control}>
+                    <button className={style.editBtn} onClick={this.toggleNote}>Edit</button>
+                    <button className={style.deleteBtn} onClick={this.deleteNote}>Delete</button>
+                </div>
+
             </div>
         )
     }

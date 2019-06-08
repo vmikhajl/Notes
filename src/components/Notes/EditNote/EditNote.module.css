@@ -10,7 +10,7 @@
     overflow:hidden;
 }
 .note h3{
-    margin-bottom: 0;
+    margin: 0;
 }
 .note input{
     border: none;
@@ -30,7 +30,7 @@
     padding: 0 4px;
     font-size: 13px;
     width: 90%;
-    height: 300px;
+    height: 280px;
     resize: none;
     border: none;
     border-left: 1px grey dashed;
@@ -40,5 +40,17 @@ textarea:active, textarea:focus{
     outline: none;
 }
 .deleteBtn{
-    background-color: #ff6359;
+    background-image: linear-gradient(#ff6359, #ad1c28);
+}
+.cancelBtn{
+    background-image: linear-gradient(#919192, #555454);
+    margin: 0 15px;
+}
+.saveBtn{
+    background-image: linear-gradient(#6fdf67, #47b848);
+}
+.control{
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
 }

@@ -3,6 +3,8 @@ import * as axios from 'axios'
 const SET_NOTES_DATA = 'SET_NOTES_DATA';
 const CREATE_NOTE = 'CREATE_NOTE';
 const DELETE_NOTE = 'DELETE_NOTE';
+const UPDATE_NOTE = 'UPDATE_NOTE';
+
 
 const API = {
     headers: {
@@ -41,6 +43,17 @@ const notesReducer = (state = initialState , action) => {
                 })
             }
         }
+        case UPDATE_NOTE:{
+            return {
+                ...state,
+                notes: state.notes.map(function(note) {
+                    if (note.id === action.newData.id) {
+                        return action.newData;
+                    }
+                    return note;
+                })
+            }
+        }
         default:
             return state;
     }
@@ -49,5 +62,6 @@ const notesReducer = (state = initialState , action) => {
 export const setNotesAC = (notes) => ({type: SET_NOTES_DATA, notes: notes});
 export const createNoteAC = (note) => ({type: CREATE_NOTE, note: note});
 export const deleteNoteAC = (id) => ({type: DELETE_NOTE, id: id});
+export const updateNoteAC = (newData) => ({type: UPDATE_NOTE, newData: newData});
 
 export default notesReducer;

@@ -27,6 +27,7 @@
     text-align: left;
     font-weight: bold;
     color: #395ebc;
+    height: 160px;
     padding: 0 4px;
     font-size: 13px;
 }
@@ -35,5 +36,22 @@
     margin: 0 auto;
 }
 .deleteBtn{
-    background-color: #ff6359;
+    background-image: linear-gradient(#ff6359, #ad1c28);
+    font-size: 15px;
+    padding: 1px;
+    width: 65px;
+    height: 25px;
+    margin: 0 5px;
+}
+.editBtn{
+    font-size: 15px;
+    padding: 1px;
+    width: 65px;
+    height: 25px;
+    background-image: linear-gradient(#395ebc, #002366);
+}
+.control{
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
 }

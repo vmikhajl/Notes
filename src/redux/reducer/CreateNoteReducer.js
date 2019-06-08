@@ -18,6 +18,7 @@ let initialState = {
 const newNoteReducer = (state = initialState , action) => {
     switch (action.type){
         case UPDATE_TITLE:{
+            debugger
             return {
                 ...state,
                 newNote:{...state.newNote,
