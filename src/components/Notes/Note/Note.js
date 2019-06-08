@@ -4,7 +4,6 @@ import style from './Note.module.css'
 class Note extends React.Component{
 
     deleteNote = () => {
-        debugger;
         let url = this.props.state.url + '/' + this.props.note.id;
         this.props.state.axios.delete(url)
             .then(
@@ -18,10 +17,15 @@ class Note extends React.Component{
         console.log(this);
 
     };
+    toggleNote = () => {
+        debugger;
+        this.props.toggleNote(this.props.note);
+    };
     render(){
         return (
-            <div className={style.note}>
-                <button onClick={this.deleteNote}>delete</button>
+            <div  className={style.note}>
+                <button className={style.deleteBtn} onClick={this.deleteNote}>delete</button>
+                <button className={style.deleteBtn} onClick={this.toggleNote}>edit</button>
                 <h3>{this.props.note.title}</h3>
                 <p>{this.props.note.content}</p>
             </div>

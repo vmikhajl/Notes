@@ -1,10 +1,12 @@
 import {connect} from "react-redux";
 import {deleteNoteAC, setNotesAC} from "../../redux/reducer/NotesReducer";
 import Notes from "./Notes";
+import {toggleNoteAC} from "../../redux/reducer/EditNoteReducer";
 
 let mapStateToProps = (state) => {
     return {
-        notesData: state.notesData
+        notesData: state.notesData,
+        editNote: state.editNote
     }
 };
 let mapDispatchToProps = (dispatch) => {
@@ -14,6 +16,10 @@ let mapDispatchToProps = (dispatch) => {
         },
         deleteNote: (id) => {
             dispatch(deleteNoteAC(id));
+        },
+
+        toggleNote: (note) => {
+            dispatch(toggleNoteAC(note))
         }
     }
 };

@@ -1,11 +1,13 @@
 import {combineReducers, createStore} from "redux";
 import notesReducer from "./reducer/NotesReducer";
-import newNoteReducer from "./reducer/noteCreateReducer";
+import newNoteReducer from "./reducer/CreateNoteReducer";
+import editNoteReducer from "./reducer/EditNoteReducer";
 
 
 let reducers = combineReducers({
     notesData : notesReducer,
-    newNote: newNoteReducer
+    newNote: newNoteReducer,
+    editNote : editNoteReducer
 });
 
 let store = createStore(reducers);

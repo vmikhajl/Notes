@@ -2,6 +2,7 @@ import React from 'react'
 import * as axios from 'axios'
 import Note from "./Note/Note";
 import style from './Note/Note.module.css'
+import EditNote from "./EditNote/EditNote";
 
 class Notes extends React.Component{
     componentDidMount() {
@@ -24,7 +25,11 @@ class Notes extends React.Component{
 
     getNotes(){
         return this.props.notesData.notes.map((note, index) => {
-            return <Note key={note.id} state={this.props.notesData} note={note} deleteNote={this.props.deleteNote}/>;
+            return <Note key={note.id} state={this.props.notesData}
+                         note={note}
+                         deleteNote={this.props.deleteNote}
+                         toggleNote={this.props.toggleNote}
+            />;
         })
     }
     notes() {
@@ -34,7 +39,12 @@ class Notes extends React.Component{
     render(){
         return (
             <div className={style.notes}>
-                {this.notes()}
+                {this.props.editNote.toggleNote
+                    ? <EditNote state={this.props.notesData}
+                                editNote={this.props.editNote.note}
+                                deleteNote={this.props.deleteNote}
+                                toggleNote={this.props.toggleNote}
+                    /> :this.notes()}
             </div>
         )
     }

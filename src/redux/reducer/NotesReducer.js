@@ -8,13 +8,14 @@ const API = {
     headers: {
         'Authorization': 'Bearer wx2xk2xvsgv9lu4wq7z940bwyypirquuteeo'
     }
-}
+};
 
 let initialState = {
     axios: axios.create(API),
     url: 'http://159.89.96.181/api/v1/notes',
     token: 'wx2xk2xvsgv9lu4wq7z940bwyypirquuteeo',
     notes: [],
+    toggleNote: false
 };
 
 const notesReducer = (state = initialState , action) => {

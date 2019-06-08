@@ -6,7 +6,7 @@ import {
     showCreatorAC,
     updateContentAC,
     updateTitleAC
-} from "../../../redux/reducer/noteCreateReducer";
+} from "../../../redux/reducer/CreateNoteReducer";
 import {createNoteAC, setNotesAC} from "../../../redux/reducer/NotesReducer";
 
 

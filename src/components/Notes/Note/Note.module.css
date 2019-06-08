@@ -10,6 +10,9 @@
     overflow:hidden;
     cursor: pointer;
 }
+.note:hover{
+    background-image: linear-gradient(#fde38e, #fbe66d);
+}
 .note p, .note h3{
     overflow:hidden
 }
@@ -30,4 +33,7 @@
 .notes{
     width: 1240px;
     margin: 0 auto;
+}
+.deleteBtn{
+    background-color: #ff6359;
 }

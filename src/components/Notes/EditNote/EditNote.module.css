@@ -1,0 +1,44 @@
+.note{
+    display: inline-block;
+    padding: 5px;
+    margin: 30px 5px 5px;
+    width: 60%;
+    height: 500px;
+    background-image: linear-gradient(#ead07e, #ffea6f);
+    box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.31);
+    font-family: 'Indie Flower', cursive;
+    overflow:hidden;
+}
+.note h3{
+    margin-bottom: 0;
+}
+.note input{
+    border: none;
+    outline: none;
+    padding-bottom: 10px;
+    background-color: transparent;
+    margin: 0 auto 5px;
+    width: 85%;
+    border-bottom: 2px #000000 solid;
+
+}
+.note textarea{
+    background-color: transparent;
+    margin: 5px 0 0;
+    text-align: left;
+    font-weight: bold;
+    padding: 0 4px;
+    font-size: 13px;
+    width: 90%;
+    height: 300px;
+    resize: none;
+    border: none;
+    border-left: 1px grey dashed;
+    border-right: 1px grey dashed;
+}
+textarea:active, textarea:focus{
+    outline: none;
+}
+.deleteBtn{
+    background-color: #ff6359;
+}
