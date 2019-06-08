@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import {setNotesAC} from "../../redux/reducer/NotesReducer";
+import {deleteNoteAC, setNotesAC} from "../../redux/reducer/NotesReducer";
 import Notes from "./Notes";
 
 let mapStateToProps = (state) => {
@@ -11,6 +11,9 @@ let mapDispatchToProps = (dispatch) => {
     return {
         setNotes: (notes) => {
             dispatch(setNotesAC(notes));
+        },
+        deleteNote: (id) => {
+            dispatch(deleteNoteAC(id));
         }
     }
 };

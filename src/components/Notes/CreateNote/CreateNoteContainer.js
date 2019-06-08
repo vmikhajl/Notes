@@ -7,7 +7,7 @@ import {
     updateContentAC,
     updateTitleAC
 } from "../../../redux/reducer/noteCreateReducer";
-import {createNoteAC} from "../../../redux/reducer/NotesReducer";
+import {createNoteAC, setNotesAC} from "../../../redux/reducer/NotesReducer";
 
 
 let mapStateToProps = (state) => {
@@ -20,11 +20,11 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
 
     return {
-        updateTitle: (value, id) => {
-            dispatch(updateTitleAC(value, id));
+        updateTitle: (value) => {
+            dispatch(updateTitleAC(value));
         },
-        updateContent: (value, id) => {
-            dispatch(updateContentAC(value, id));
+        updateContent: (value) => {
+            dispatch(updateContentAC(value));
         },
         createNote: (note) => {
             dispatch(createNoteAC(note));
@@ -37,6 +37,9 @@ let mapDispatchToProps = (dispatch) => {
         },
         hideCreator: () => {
             dispatch(hideCreatorAC());
+        },
+        setNotes: (notes) => {
+            dispatch(setNotesAC(notes));
         },
 
     }

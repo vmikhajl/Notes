@@ -10,7 +10,7 @@ class Notes extends React.Component{
                 'Authorization': 'Bearer ' + this.props.notesData.token
             }
         };
-        axios.get('http://159.89.96.181/api/v1/notes', config)
+        axios.get('http://159.89.96.181/api/v1/notes/', config)
             .then(
                 response => {
                     console.log(response);
@@ -21,9 +21,10 @@ class Notes extends React.Component{
             });
 
     }
+
     getNotes(){
         return this.props.notesData.notes.map((note, index) => {
-            return <Note key={index} state={note}/>
+            return <Note key={note.id} state={this.props.notesData} note={note} deleteNote={this.props.deleteNote}/>;
         })
     }
     notes() {

@@ -8,14 +8,40 @@ class CreateNote extends React.Component{
         this.contentRef = React.createRef();
     }
     onTitleChange = () => {
-        this.props.updateTitle(this.titleRef.current.value, this.props.notesData.id);
+        this.props.updateTitle(this.titleRef.current.value);
     };
     onContentChange = () => {
-        this.props.updateContent(this.contentRef.current.value, this.props.notesData.id);
+        this.props.updateContent(this.contentRef.current.value);
     };
     onButtonClick = () => {
-        this.props.createNote(this.props.newNote);
-        this.props.clearNote();
+        if (this.props.newNote.title === '') {
+            this.props.newNote.title = 'Untitled';
+        }
+
+        this.props.notesData.axios.post(this.props.notesData.url, this.props.newNote)
+            .then(
+                response => {
+                    console.log(response);
+                    this.props.createNote(response.data);
+                    this.props.clearNote();
+                })
+            .catch((error) => {
+                if (error.response) {
+                    // The request was made and the server responded with a status code
+                    // that falls out of the range of 2xx
+                    // console.log(error.response.data);
+                    console.log(error.response.status);
+                    // console.log(error.response.headers);
+                } else if (error.request) {
+                    // The request was made but no response was received
+                    // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+                    // http.ClientRequest in node.js
+                    console.log(error.request);
+                } else {
+                    // Something happened in setting up the request that triggered an Error
+                    console.log('Error', error.message);
+                }
+            });
     };
     showCreator = () => {
         this.props.showCreator();

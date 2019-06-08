@@ -7,7 +7,7 @@ const HIDE_NOTE_CREATOR = 'HIDE_NOTE_CREATOR';
 const SHOW_NOTE_CREATOR = 'SHOW_NOTE_CREATOR';
 
 let initialState = {
-    newNote: {id: 0, title: '', content: ''},
+    newNote: {title: '', content: ''},
     display: {
         visibility: true,
         displayStyle: style.createNote
@@ -22,7 +22,6 @@ const newNoteReducer = (state = initialState , action) => {
                 ...state,
                 newNote:{...state.newNote,
                     title : action.value,
-                    id: action.id
                 }
             };
         }
@@ -31,7 +30,6 @@ const newNoteReducer = (state = initialState , action) => {
                 ...state,
                 newNote:{...state.newNote,
                     content : action.value,
-                    id: action.id
                 }
             };
         }
@@ -40,7 +38,6 @@ const newNoteReducer = (state = initialState , action) => {
                 ...state,
                 newNote:{...state.newNote,
                     content : '',
-                    id: undefined,
                     title: ''
                 }
             };
@@ -70,8 +67,8 @@ const newNoteReducer = (state = initialState , action) => {
     }
 
 };
-export const updateTitleAC = (value, id) => ({type: UPDATE_TITLE, value: value, id: id});
-export const updateContentAC = (value, id) => ({type: UPDATE_CONTENT, value: value, id: id});
+export const updateTitleAC = (value) => ({type: UPDATE_TITLE, value: value});
+export const updateContentAC = (value) => ({type: UPDATE_CONTENT, value: value});
 export const clearNewNoteAC = () => ({type: CLEAR_NEW_NOTE});
 export const showCreatorAC = () => ({type: SHOW_NOTE_CREATOR});
 export const hideCreatorAC = () => ({type: HIDE_NOTE_CREATOR});
